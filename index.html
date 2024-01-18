@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload PDF</title>
+    <!-- Include Tailwind CSS via CDN for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include PDF.js via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/compromise/13.10.2/compromise.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/compromise/13.10.2/compromise.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/compromise@14.11.0/builds/compromise.min.js"></script>
+    <!-- <script src="https://gist.github.com/RamVegiraju/7563c0011a73c8a066315060c6888b91.js"></script> -->
+    <script src="https://unpkg.com/compromise-dates"></script>
+    <script src="https://unpkg.com/compromise-numbers"></script>
+    <script src="https://unpkg.com/compromise-stats"></script>
+    <script src="https://unpkg.com/compromise-npgrams"></script>
+    <script src="https://unpkg.com/compromise"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compromise-numbers/3.1.2/compromise-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compromise-syllables/3.0.0/compromise-syllables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+  </head>
+  <style>
+    #output {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-all;
+      hyphens: auto;
+      max-width: 900px
+    }
+    #output p {
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-all;
+  hyphens: auto;
+}
 
+  </style>
+  
+  <body class="p-10">
+    <form id="uploadForm">
+        <input type="file" id="pdfFile" accept=".pdf" class="border p-2 rounded" />
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded mt-2">Upload</button>
+    </form>
+    <div class="flex font-sans">
+      <form class="flex-auto p-6">
+        <!-- The rest of your code goes here -->
+      </form>
+    </div>
+    <div class="container mt-5 mx-auto p-6 bg-blue-50 rounded-lg shadow-md">
+      <table class="min-w-full bg-white divide-y divide-blue-200">
+        <thead class="bg-blue-500">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+              Output
+            </th>
+          </tr>  
+        </thead>
+        <tbody class="bg-white divide-y divide-blue-200">
+          <tr>
+            <td class="px-6 py-4 whitespace-normal break-all">
+              <pre id="output" class="text-blue-700"></pre>  
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
